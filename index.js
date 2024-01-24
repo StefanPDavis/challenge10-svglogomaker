@@ -4,8 +4,8 @@ const fs = require("fs");
 const {Circle, Triangle, Square} = require("./lib/shapes");
 
 function promptUser() {
-    inquirer
-      .prompt([
+    inquirer.prompt([
+
         {
         name: "text",
         type: "input",
@@ -32,13 +32,21 @@ function promptUser() {
         },
 
       ])
-      
+      .then((answers) => {
+        if (answers.text.length > 3) {
+          console.log("Must have no more than three characters");
+          promptUser();
+
+        } else {
+          writeToFile("logo.svg", answers);
+        }
+    });
 };
 
 function writeToFile(fileName, answers) {
     let newSVG = "";
 
-    newSVG = '<svg viewbox="0 0 500 500" xmlns="https://www.w3.org/2000/svg/" width="300" height="200" >';
+    newSVG = '<svg version="2" width="300" height="200" xmlns="https://www.w3.org/2000/svg/" >';
 
     newSVG += "<g>";
 
