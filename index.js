@@ -56,13 +56,13 @@ function writeToFile(fileName, answers) {
     let shapeChoice;
     if (answers.shape === "Circle") {
         shapeChoice = new Circle();
-        newSVG += `<circle cx="150" cy="115" r="80" fill="${answers.shapeBackgroundColor}"/>`;
+        newSVG += `<circle cx="150" cy="115" r="80" fill="${answers.shapeColor}"/>`;
     } else if (answers.shape === "Triangle") {
         shapeChoice = new Triangle();
-        newSVG += `<polygon points="150, 18 244, 182 56, 182" fill="${answers.shapeBackgroundColor}"/>`;
+        newSVG += `<polygon points="150, 18 244, 182 56, 182" fill="${answers.shapeColor}"/>`;
     } else {
         shapeChoice = new Square();
-        newSVG += `<rect x="73" y="40" width="160" height="160" fill="${answers.shapeBackgroundColor}"/>`;
+        newSVG += `<rect x="73" y="40" width="160" height="160" fill="${answers.shapeColor}"/>`;
     }
   
     newSVG += `<text x="150" y="130" text-anchor="middle" font-size="40" fill="${answers.textColor}">${answers.text}</text>`;
