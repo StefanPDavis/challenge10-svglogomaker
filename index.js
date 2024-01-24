@@ -15,13 +15,13 @@ function promptUser() {
         {
         name: "textColor",
         type: "input",
-        message: "Type what color you want the text to be",
+        message: "Type a color or hexadecimal for your text",
         },
 
         {
         name: "shape",
         type: "list",
-        message: "Select which shape you want in your logo",
+        message: "Select which shape you want for your logo",
         choices: ["Circle", "Triangle", "Square"],
         },
 
